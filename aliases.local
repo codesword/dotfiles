@@ -1,0 +1,55 @@
+alias cdp="cd ~/projects"
+alias cdplay="cd ~/projects/playground"
+alias eventx="cd ~/projects/simulations/eventx"
+alias workdey="cd ~/projects/simulations/workdey"
+alias getmyshop="cd ~/projects/simulations/getmyshop"
+
+
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+
+galaxy () { cd ~/projects/checkpoints/galaxy/checkpoint-$1 }
+
+meteor () { cd ~/projects/checkpoints/meteor/checkpoint-$1 }
+
+comet () { cd ~/projects/checkpoints/comet/checkpoint-$1 }
+
+dinner () { cd ~/projects/checkpoints/dinner-dash/checkpoint-$1 }
+
+branches () { cd ~/projects/checkpoints/branches/checkpoint-$1 }
+
+dbattle () { cd ~/projects/playground/elixir/distributed_battleship/apps/bs_$1 }
+
+andela () { cd ~/go-workspace/src/github.com/andela/micro-$1 }
+
+function bs() {
+  if [ $1 ]; then
+    iex --name $1 --cookie battleship-in-the-wild -S mix run
+  else
+    iex --name server@0.0.0.0 --cookie battleship-in-the-wild -S mix run
+  fi
+}
+
+function bc() {
+  if [ $1 ]; then
+    server=server@0.0.0.0 nick=$1 elixir --name client@0.0.0.0 -S mix run
+  else
+    server=server@0.0.0.0 nick=ikem elixir --name client@0.0.0.0 -S mix run
+  fi
+}
+
+function clean-docker() {
+
+  # remove exited containers:
+  docker ps --filter status=dead --filter status=exited -aq | xargs docker rm -v
+
+  # remove unused images:
+  docker images --no-trunc | grep '<none>' | awk '{ print $3 }' | xargs  docker rmi
+
+  # remove unused volumes:
+  find '/var/lib/docker/volumes/' -mindepth 1 -maxdepth 1 -type d | grep -vFf <(
+    docker ps -aq | xargs docker inspect | jq -r '.[] | .Mounts | .[] | .Name | select(.)'
+  ) | xargs -r rm -fr
+}
+
+
+

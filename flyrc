@@ -1,0 +1,17 @@
+targets:
+  andela-ci:
+    api: http://192.168.100.4:8080
+    token:
+      type: ""
+      value: ""
+  lite:
+    api: http://192.168.100.4:8080
+    token:
+      type: ""
+      value: ""
+  services-ci:
+    api: https://130.211.12.121
+    insecure: true
+    token:
+      type: Bearer
+      value: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0NzE2OTY5OTAsImlzQWRtaW4iOnRydWUsInRlYW1JRCI6MSwidGVhbU5hbWUiOiJtYWluIn0.mHYXRQ2BmEijeqgA_6z6ryMArhq8T8Vd7FlFrh4OsgJjfl4nIGkmKVh9D76wpBcqbftWlVSPgbBKMC7j15NeMeZ1sXWzJoTh3JlgUCdJ4cAMnWbTTPPkECn3qWgONdgZEnBdIiAtZCRBuBcVGtW14O1lJ89YaGuXuwG30qjN_VS6RHNO2888sBiqh3erEF9LDvL1pwYjtej2VIfzJrd7lqUEmuUoQSa17QIcE5iEhVGU7F3ZT3yA--ZLfNnd7d-tLSLZZZ5P1IA6qC0d43ejvxXJpVV1aJfW0xyoUFZ1gAEIBD1Z83EEufNG70Wu8Do6nlUAFre1rYAv3FrOEvLEEw

@@ -1,0 +1,7 @@
+[alias]
+  cm = commit -m
+  p = push
+  pom = push origin master
+  po = push origin
+  plom = pull origin master
+  ll = log --oneline --decorate

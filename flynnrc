@@ -1,0 +1,8 @@
+default = "default"
+
+[[cluster]]
+  Name = "default"
+  Key = "dfc6dbe9a016c7b89a714591c21e3484"
+  TLSPin = "IHfkgg6gxJDQfGvW738UFKgQP5wLkLTKiA5MgEin5uw="
+  ControllerURL = "https://controller.gobazeapp.com"
+  GitURL = "https://git.gobazeapp.com"
